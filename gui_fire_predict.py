@@ -102,7 +102,7 @@ with col_btn2:
 
 # Xử lý sự kiện
 if predict_btn:
-    model = joblib.load("rf_model_clean.pkl")
+    model = joblib.load("rf_model.pkl")
     df = pd.DataFrame([[st.session_state.month, st.session_state.FFMC, st.session_state.DMC,
                         st.session_state.DC, st.session_state.ISI, st.session_state.temperature,
                         st.session_state.RH, st.session_state.wind, st.session_state.rain,
