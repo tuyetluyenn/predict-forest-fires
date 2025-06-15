@@ -35,19 +35,11 @@ st.markdown(
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
-    .block-container {
-        background-color: rgba(0, 0, 0, 0) !important;
-    }
     div[data-testid="stVerticalBlock"] {
         background-color: white;
         padding: 1rem;
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .stTextInput > div > input,
-    .stNumberInput > div > input,
-    .stTextArea > div > textarea {
-        color: black; /* chuyển lại màu chữ cho dễ đọc */
     }
     .stButton button {
         background-color: #ff4b4b;
@@ -73,7 +65,12 @@ if "result_msg" in st.session_state and st.session_state.result_msg:
 col1, col2 = st.columns(2)
 
 with col1:
-    month = st.number_input("Tháng", 1, 12, key="month")
+    month = st.selectbox(
+        "Tháng",
+        options=list(range(1, 13)),
+        format_func=lambda x: f"Tháng {x}",
+        key="month"
+    )
     FFMC = st.number_input("FFMC (Fine Fuel Moisture Code)", key="FFMC", min_value=0.0, help="Chỉ số độ ẩm của lớp cỏ khô, lá khô trên bề mặt. Giá trị càng cao cho thấy vật liệu dễ bén lửa hơn.")
     DMC = st.number_input("DMC (Duff Moisture Code)", key="DMC", min_value=0.0, help="Phản ánh độ khô của lớp hữu cơ nằm dưới lớp mặt đất. Chỉ số cao thể hiện khả năng cháy âm ỉ mạnh và lan rộng.")
     DC = st.number_input("DC (Drought Code)", key="DC", min_value=0.0, help="Chỉ số hạn hán, dại diện cho độ khô hạn sâu trong đất. Giá trị cao đồng nghĩa với nguy cơ cháy kéo dài và khó kiểm soát.")
