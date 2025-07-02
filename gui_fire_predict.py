@@ -71,9 +71,9 @@ with col1:
         format_func=lambda x: f"Tháng {x}",
         key="month"
     )
-    FFMC = st.number_input("FFMC (Fine Fuel Moisture Code)", key="FFMC", min_value=0.0, help="Chỉ số độ ẩm của lớp cỏ khô, lá khô trên bề mặt. Giá trị càng cao cho thấy vật liệu dễ bén lửa hơn.")
-    DMC = st.number_input("DMC (Duff Moisture Code)", key="DMC", min_value=0.0, help="Phản ánh độ khô của lớp hữu cơ nằm dưới lớp mặt đất. Chỉ số cao thể hiện khả năng cháy âm ỉ mạnh và lan rộng.")
-    DC = st.number_input("DC (Drought Code)", key="DC", min_value=0.0, help="Chỉ số hạn hán, dại diện cho độ khô hạn sâu trong đất. Giá trị cao đồng nghĩa với nguy cơ cháy kéo dài và khó kiểm soát.")
+    FFMC = st.number_input("FFMC (Fine Fuel Moisture Code)", key="FFMC", min_value=0.0, help="Chỉ số phản ánh độ khô của lớp cỏ khô, lá khô trên bề mặt. Giá trị càng cao cho thấy vật liệu dễ bén lửa hơn.")
+    DMC = st.number_input("DMC (Duff Moisture Code)", key="DMC", min_value=0.0, help="Chỉ số phản ánh độ khô của lớp hữu cơ nằm dưới lớp mặt đất (độ sâu 5-10 cm). Chỉ số cao thể hiện khả năng cháy âm ỉ mạnh và lan rộng.")
+    DC = st.number_input("DC (Drought Code)", key="DC", min_value=0.0, help="Chỉ số phản ánh độ khô hạn lâu dài ở lớp đất sâu (độ sâu 10-20 cm). Giá trị cao đồng nghĩa với nguy cơ cháy kéo dài và khó kiểm soát.")
     ISI = st.number_input("ISI (Initial Spread Index)", key="ISI", min_value=0.0, help="Chỉ số đánh giá tốc độ lan truyền ban đầu của đám cháy. Chỉ số càng cao, nguy cơ cháy lan nhanh càng lớn.")
 
 with col2:
